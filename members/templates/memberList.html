@@ -1,17 +1,21 @@
-{% extends "master.html" %} 
+{% extends "masterMember.html" %} 
 
-{% block title %} 
+{% block heading %} 
 Members List! 
 {% endblock %} 
 
 {%block content%}
+    <h3>Click here to go back <a href="/">Home</a></h3>
     {% for member in memberList %}
         <ul>
             User-
                 <b>{{member.firstname}} {{member.lastname}}</b>
-                    {% for key,value in member.items %}
+                    <li><b>First Name</b>- {{member.firstname}}</li>
+                    <li><b>Last Name</b>- {{member.lastname}}</li>
+                    <li><a href="info/{{member.id}}">Full Member Info</a></li>
+                    <!-- {% for key,value in member.items %}
                     <li><b>{{key}}</b>- {{value}}</li>
-                    {% endfor %}
+                    {% endfor %} -->
                 <br />
         </ul>
     {% endfor %}

@@ -3,7 +3,15 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import Member
 
-def members(request):
+def main(request):
+    template = loader.get_template('main.html')
+    return HttpResponse(template.render())
+
+def testing(request):
+    template = loader.get_template('testing.html')
+    return HttpResponse(template.render())
+
+def firsthtml(request):
     template = loader.get_template('firstHtml.html')
     return HttpResponse(template.render())
 
