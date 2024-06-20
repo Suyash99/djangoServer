@@ -1,0 +1,14 @@
+{% extends "master.html" %} 
+
+{% block title %} 
+User- {{member.firstname}} {{member.lastname}}! 
+{% endblock %} 
+
+{% block content %}
+<ul>
+  {% for key,value in member.items %}
+  <li><b>{{key}}</b>- {{value}}</li>
+  {% endfor %}
+</ul>
+<br />
+{% endblock %}
